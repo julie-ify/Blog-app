@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'posts/index'
   root "users#index"
 
   get "/users", to: "users#index"
