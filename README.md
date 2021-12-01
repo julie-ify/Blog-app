@@ -39,7 +39,17 @@ To get a local copy up and running follow these simple example steps.
 
 ### Running The App
 
-- Run ```rails s``` then go to the browser and type `localhost:3000`
+- Run ```bundle install``` to install all the necessary gems
+- Run ```rake db:create:all``` and ```rake db:migrate``` then run ```rails s``` 
+- Go to the browser and type `localhost:3000` to see the app
+
+### Test
+
+- Run ```gem install rspec``` to install Rspec,
+
+- Run ```rspec spec``` to run all the test cases, and
+
+- Run ```rspec spec/name_of_test_file.rb``` to run test cases individually.
 
 ## Author
 
