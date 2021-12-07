@@ -1,0 +1,9 @@
+<ul>
+  <% @comments && @comments.each do |c| %>
+    <li>
+      <span><%= c.user.name  %>  </span>
+      <span><%= c.text %> </span>
+    </li>
+    <hr />
+  <% end %>
+</ul>
