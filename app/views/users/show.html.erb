@@ -1,1 +1,17 @@
-<h1>Here is a particular user<h1>
+<div>
+  <%= render partial: "user_profile", locals: {user: @user} %>
+  <div>
+    <h5>Bio</h5>
+    <p><%= @user.bio %> </p>
+  </div>
+  <ul>
+    <% @posts.each do |p| %>
+      <li>
+        <%= render partial: "posts/post_profile", locals: { post: p } %>
+      </li>
+    <% end %>
+  </ul>
+  <div>
+    <%= link_to "See all posts", user_posts_path(@user.id), class: "btn" %>
+  <div>
+</div>
