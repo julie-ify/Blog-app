@@ -15,7 +15,7 @@
           </div>
           <div>
             <ul class="border border-3 border-dark container p-2 mt-1 bio">
-              <% p.comments.each do |c| %>
+              <% p.recent_comments.each do |c| %>
               <li><%= c.author.name %>: <%= c.text%></li>
               <% end %>
             </ul>
