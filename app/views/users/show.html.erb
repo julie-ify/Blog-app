@@ -5,7 +5,7 @@
     <p><%= @user.bio %> </p>
   </div>
   <ul class="recent-post">
-    <% @posts.each do |p| %>
+    <% @user.recent_posts.each do |p| %>
       <li class="border border-3 border-dark container p-2 my-5 bio" >
         <div>
           <div>
