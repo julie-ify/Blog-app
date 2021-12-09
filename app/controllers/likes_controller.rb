@@ -6,9 +6,9 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.html do
         if @like.save
-          redirect_to user_post_path(@post.author.id, @post.id), notice: "Liked 👍"
+          redirect_to user_post_path(@post.author.id, @post.id), notice: 'Liked 👍'
         else
-          redirect_to user_post_path(@post.author.id, @post.id), alert: 'Like not added''
+          redirect_to user_post_path(@post.author.id, @post.id), alert: 'Like not added'
         end
       end
     end
