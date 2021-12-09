@@ -1,4 +1,5 @@
 <nav class="fs-6 p-3 container mt-2 p-2 bio"><%= link_to "Back", :back %></nav>
+<h3 class="fs-2 p-3 container mt-2 p-2 bio"> Create Your Post</h3>
 <section class="fs-4 p-3 border border-1 container mt-5 p-2 bio">
   <%= form_with model:[@current, @current.posts.build], method: :post, local: true do |f| %>
     <%= f.label :title, "Title", class: "form-label fs-6" %>
