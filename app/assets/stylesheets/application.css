@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+.user_wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display {
+  color: #222;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  column-gap: 10%;
+  margin-bottom: 20px;
+}
+
+.user_list {
+  padding: 10px;
+  border: 2px solid #333;
+  width: 100%;
+}
+
+.num_post {
+  align-self: flex-end;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bio {
+  width: 70%;
+}
+
+.button {
+  width: 10%;
+  text-align: center;
+}

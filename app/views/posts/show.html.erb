@@ -1,1 +1,16 @@
-<h1>Here is a list of posts for a specific user</h1>
+<div class="profile__container">
+  <div class="post">
+    <div class="border border-3 border-dark container p-2 my-5 bio">
+      <div class="d-flex justify-content-between my-3">
+        <h4><%= @post.title %> by <%= @user.name %></h4>
+        <p>Comments : <%= @post.comments.size%>  Likes : <%= @post.likes.size %> </p>
+      </div>
+        <p><%= @post.text %> </p>
+    </div>
+    <ul class="border border-3 border-dark container p-2 my-5 bio">
+      <% @post.comments.each do |c| %>
+        <li><%= c.author.name %>: <%= c.text%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
