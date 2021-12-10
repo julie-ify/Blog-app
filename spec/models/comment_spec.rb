@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  describe "Validations" do
+  describe 'Validations' do
     subject { Comment.new(text: 'This is test case', author_id: 5, post_id: 3) }
 
     before { subject.save }
@@ -20,5 +20,5 @@ RSpec.describe Comment, type: :model do
       subject.post_id = 'look'
       expect(subject).to_not be_valid
     end
-  end  
+  end
 end

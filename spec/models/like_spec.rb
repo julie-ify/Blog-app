@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe "Validations" do
-    subject { Like.new( author_id: 6, post_id: 1) }
+  describe 'Validations' do
+    subject { Like.new(author_id: 6, post_id: 1) }
 
     before { subject.save }
 
@@ -16,5 +16,4 @@ RSpec.describe Like, type: :model do
       expect(subject).to_not be_valid
     end
   end
-
 end
