@@ -1,7 +1,9 @@
 <div>
-<nav class="fs-6 p-3 container mt-2 p-2 bio">
-  <%= link_to "Home", root_path %>
-</nav>
+<ul class="nav justify-content-center bg-light text-white">
+  <li class="nav-item">
+    <%= link_to "Home", root_path, class: "nav-link" %>
+  </li>
+</ul>
   <%= render partial: "user_profile", locals: {user: @user} %>
   <div class="border border-3 border-dark container p-2 my-5 bio">
     <h3 class="py-4">Bio</h3>
