@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   host: localhost
   username: postgres
-  password: ebere1994
+  password: kalunge
   port: 5432
 
   # For details on connection pooling, see Rails configuration guide
