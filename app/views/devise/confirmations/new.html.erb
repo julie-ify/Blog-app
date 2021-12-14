@@ -1,0 +1,17 @@
+<h2 class="fs-4 p-3 border border-1 container mt-5 p-2 bio">Resend confirmation instructions</h2>
+
+<div class="fs-4 p-3 border border-1 container mt-5 p-2 bio">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control mb-4", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Resend confirmation instructions", data: {disable_with: "Sending..."}, class: "btn btn-primary my-3" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
+
