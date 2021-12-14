@@ -1,11 +1,14 @@
 <ul class="border border-3 border-dark container p-2 my-5 bio">
   <% @post.comments.each do |comment| %>
-  <li><%= comment.author.name %>: <%= comment.text%>
-    <% if can? :destroy, comment %>
-    <%= link_to comment_path(@user.id, @post.id, comment.id), method: :delete do %>
-    <span class="m-3 badge bg-danger"><span> <i class="fas fa-trash-alt"></i> </span>Delete</span>
-    <% end %>
-    <% end %>
+  <li class="d-flex justify-content-between" >
+    <div>
+      <%= comment.author.name %>: <%= comment.text%>
+    </div>
+    <div>
+      <% if can? :destroy, comment %>
+      <%= link_to "Delete", comment_path(@user.id, @post.id, comment.id), method: :delete, data: {disable_with: "Deleting..."}, class: "btn btn-danger mb-3" %>
+      <% end %>
+    </div>
   </li>
   <% end %>
 </ul>

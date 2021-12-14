@@ -13,16 +13,4 @@ class LikesController < ApplicationController
       end
     end
   end
-
-  def destroy
-    previous_url = request.env['HTTP_REFERER']
-    like_to_delete = Like.find_by(author_id: params[:id])
-
-    if like_to_delete.destroy
-      flash[:notice] = 'Post unliked successfully!'
-    else
-      flash[:alert] = 'Unable to unlike this post'
-    end
-    redirect_to(previous_url)
-  end
 end

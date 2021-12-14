@@ -11,14 +11,11 @@
       </div>
       <p><%= @post.text %> </p>
       <% if can? :destroy, @post %>
-      <%= link_to user_post_path(@user.id, @post.id), method: :delete do %>
-      <span class="m-3 badge bg-danger"><span> <i class="fas fa-trash-alt"></i> </span>Delete</span>
-      <% end %>
+      <%= link_to "Delete", user_post_path(@user.id, @post.id), method: :delete, data: {disable_with: "Deleting..."}, class: "btn btn-danger mb-3"%>
       <% end %>
     </div>
     
     <%= render "layouts/coomcard" %>
-    <%= render "layouts/likedestroy" %>
     <%= render "comments/comment_form" %>
   </div>
 </div>

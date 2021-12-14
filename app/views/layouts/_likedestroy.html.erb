@@ -1,9 +1,0 @@
-<div class="border border-3 border-dark container p-2 my-5 bio">
-<% @post.likes.each do |like| %>
-  <% if can? :destroy, like %>
-  <%= link_to like_path(@user.id, @post.id, like.id), method: :delete do %>
-  <span class="m-3 badge bg-danger"><span> <i class="fas fa-trash-alt"></i> </span>Unlike</span>
-  <% end %>
-  <% end %>
-<% end %>
-</div>
