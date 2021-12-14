@@ -6,22 +6,19 @@
     <div class="border border-3 border-dark container p-2 my-5 bio">
       <div class="d-flex justify-content-between my-3">
         <h4><%= @post.title %> by <%= @user.name %></h4>
-        <p>Comments : <%= @post.comments.size%>  Likes : <%= @post.likes.size %> </p>
+        <p>Comments : <%= @post.comments.size%> Likes : <%= @post.likes.size %> </p>
+        
       </div>
-        <p><%= @post.text %> </p>
-        <% if can? :destroy, @post %>
-        <%= link_to user_post_path(@user.id, @post.id), method: :delete do %>
-            <span class="m-3 badge bg-danger"><span> <i class="fas fa-trash-alt"></i> </span>Delete</span>
-        <% end %>
-        <% end %>
-    </div>
-    <ul class="border border-3 border-dark container p-2 my-5 bio">
-      <% @post.comments.each do |c| %>
-        <li><%= c.author.name %>: <%= c.text%></li>
+      <p><%= @post.text %> </p>
+      <% if can? :destroy, @post %>
+      <%= link_to user_post_path(@user.id, @post.id), method: :delete do %>
+      <span class="m-3 badge bg-danger"><span> <i class="fas fa-trash-alt"></i> </span>Delete</span>
       <% end %>
-    </ul>
+      <% end %>
+    </div>
+    
+    <%= render "layouts/coomcard" %>
+    <%= render "layouts/likedestroy" %>
     <%= render "comments/comment_form" %>
   </div>
 </div>
-
-
