@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   load_and_authorize_resource
 
   def index
@@ -36,7 +35,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(@user.id), notice: 'Post deleted'
   end
-
 
   private
 
