@@ -9,9 +9,9 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Resend confirmation instructions", data: {disable_with: "Signing..."}, class: "btn btn-primary my-3" %>
+      <%= f.submit "Resend confirmation instructions", data: {disable_with: "Sending..."}, class: "btn btn-primary my-3" %>
     </div>
   <% end %>
+  <%= render "devise/shared/links" %>
 </div>
 
-<%= render "devise/shared/links" %>
