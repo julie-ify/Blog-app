@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     previous_url = request.env['HTTP_REFERER']
-    comment_to_delete = Comment.find_by(author_id: params[:id])
+    comment_to_delete = Comment.find(params[:id])
 
     if comment_to_delete.destroy
       flash[:notice] = 'Comment Deleted successfully!'
