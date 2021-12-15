@@ -1,0 +1,17 @@
+<% unless @post.comments.empty? %>
+<ul class="border border-3 border-dark container p-2 my-5 bio">
+  <% @post.comments.each do |comment| %>
+  <li class="d-flex justify-content-between zebra p-2" >
+    <div>
+      <%= comment.author.name %>: <%= comment.text%>
+    </div>
+    <div>
+      <% if can? :destroy, comment %>
+      <%= link_to "Delete", comment_path(comment.id), method: :delete, data: {disable_with: "Deleting..."}, class: "btn btn-danger mb-3" %>
+      <% end %>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<%end%>
+
