@@ -11,7 +11,9 @@ class CommentsController < ApplicationController
           redirect_to user_post_path(@post.author.id, @post.id), alert: 'Comment not created, try again!'
         end
       end
+
     end
+
   end
 
   def destroy

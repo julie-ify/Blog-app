@@ -1,6 +1,9 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  protect_from_forgery with: :exception
 
+  respond_to :json
+  
   before_action :update_allowed_parameters, if: :devise_controller?
 
   protected

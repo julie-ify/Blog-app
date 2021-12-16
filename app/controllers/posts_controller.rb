@@ -9,9 +9,6 @@ class PostsController < ApplicationController
     @user = @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments, :likes).find(params[:id])
 
-    if stale?(last_modified: @post.updated_at)
-    render json: @post
-    end
   end
 
   def new
