@@ -5,4 +5,4 @@ class Api::V1::PostsController < ApplicationController
     @posts = Post.all
     render json: @posts, status: 200
   end
-end 
+end
