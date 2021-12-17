@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
+  skip_authorize_resource only: [:all_posts]
+
   def index
     @user = User.includes(:posts).find(params[:user_id])
   end
