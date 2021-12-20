@@ -56,7 +56,7 @@ To get a local copy up and running follow these simple example steps.
 👤 **Juliana Ifionu**
 
 - GitHub: [@julie-ify](https://github.com/julie-ify)
-- LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/juliana-ifionu-4a9492212/)
+- LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/e-ifionu/)
 
 
 ## 🤝 Contributing
