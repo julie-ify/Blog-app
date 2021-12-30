@@ -22,11 +22,13 @@
           </div>
         </div>
         <div>
+        <% unless p.comments.empty? %>
           <ul class="border border-3 border-dark container p-2 mt-1 bio">
             <% p.recent_comments.each do |c| %>
             <li><%= c.author.name %>: <%= c.text%></li>
             <% end %>
           </ul>
+        <% end %>
         </div>
       </li>
     <% end %>
