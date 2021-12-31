@@ -1,0 +1,11 @@
+<div class="fs-4 p-3 border border-1 container mt-5 p-2 bio">
+  <%= form_with model:[@current, @current.posts.build], method: :post, local: true do |f| %>
+    <%= f.label :title, "Title", class: "form-label fs-6" %>
+    <%= f.text_field :title, :placeholder => "Add Your title here...", required: true, class: "form-control mb-4" %>
+
+    <%= f.label :text, "Write a new post", class: "form-label fs-6" %>
+    <%= f.text_area :text, size: "80x15", :placeholder => "Add your post here...", required: true, class: "form-control" %>
+
+    <%= f.submit "Add Post", data: {disable_with: "Adding..."}, class: "btn btn-primary my-3" %>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+<div>
+<ul class="nav justify-content-center bg-light text-white">
+  <li class="nav-item">
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link'  %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "Settings", edit_user_registration_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "Profile", current_user, class: 'nav-link' %>
+  </li>
+</ul>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+      <%= render partial: "user_profile", locals: {user: user} %>
+    <% end %>
+  <% end %>
+</div>
+

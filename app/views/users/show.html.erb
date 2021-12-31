@@ -1,0 +1,32 @@
+<div>
+<ul class="nav justify-content-center bg-light text-white">
+  <li class="nav-item">
+    <%= link_to "Home", root_path, class: "nav-link" %>
+  </li>
+</ul>
+  <%= render partial: "user_profile", locals: {user: @user} %>
+  <div class="border border-3 border-dark container p-2 my-5 bio">
+    <h3 class="py-4">Bio</h3>
+    <p><%= @user.bio %> </p>
+  </div>
+  <ul>
+    <% @user.recent_posts.each do |p| %>
+      <li class="border border-3 border-dark container p-2 my-5 bio" >
+        <div>
+          <div>
+            <%= link_to user_post_path(@user.id, p.id), id: "user_post#{p.id}" do %>
+              <h4 class="py-4"><%= p.title %></h4>
+            <% end %>
+            <p><%= p.text %> </p>
+          <div>
+          <span>Comments: <%= p.comments.size %></span>
+          <span>Likes: <%= p.likes.size %></span>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <div>
+    <%= link_to "See all posts", user_posts_path(@user.id), class: "btn btn-primary d-flex justify-content-center align-self-center mb-5 button display" %>
+  <div>
+</div>
